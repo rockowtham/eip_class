@@ -10,6 +10,7 @@ Convolution
 Filters/Kernels 
 =================
 
+         The kernel is the small/Subset of the given input matrix of the selected size, It moves over the each step of the input matrix to arrive the calculated output.
     
 
 Epochs
