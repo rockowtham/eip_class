@@ -37,7 +37,7 @@ Feature Map
 Activation Function 
 ========================
 
-  The activation function is a node that is put at the end of or in between Neural Networks. T
+    Activation function decides, whether a neuron should be activated or not by calculating weighted sum and further adding bias with it. The purpose of the activation function is to introduce non-linearity into the output of a neuron.
   
 Receptive Field
 ==================
