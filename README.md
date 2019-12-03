@@ -8,10 +8,12 @@ Model Code
 =============
 
 model_1 = Sequential()
+
 model_1.add(SeparableConv2D(filters=32, kernel_size=(3,3), padding='valid', strides = (1,1), depth_multiplier = 2, activation = 'relu', input_shape = (32, 32, 3)))# Output Size: 30,30,32 RF 3
 model_1.add(BatchNormalization())
 model_1.add(Activation('relu'))
 model_1.add(Dropout(0.1))
+
 
 model_1.add(SeparableConv2D(filters=64, kernel_size=(3,3), use_bias= False, depth_multiplier = 2)) #Output Size: 28,28,63 RF: 5
 model_1.add(BatchNormalization())
@@ -23,14 +25,15 @@ model_1.add(Activation('relu'))
 model_1.add(BatchNormalization())
 model_1.add(Dropout(0.1))
 
+
 model_1.add(SeparableConv2D(filters=256, kernel_size=(3,3), use_bias= False, depth_multiplier = 1)) #Output Size: 24,24,256 RF: 8
 model_1.add(Activation('relu'))
 model_1.add(BatchNormalization())
 model_1.add(Dropout(0.1))
 
+
 model_1.add(MaxPooling2D(pool_size=(2, 2))) #Output Size: 12,12,128 RF: 11
 model_1.add(Dropout(0.1))
-
 
 
 model_1.add(SeparableConv2D(filters=32, kernel_size=(3,3), use_bias= False, depth_multiplier = 1)) #Output Size: 10,10,32 RF: 20
@@ -50,10 +53,8 @@ model_1.add(Dropout(0.1))
 model_1.add(SeparableConv2D( 10,kernel_size=(3, 3)))  # Output Size:1,1,10    RF:50
 
 model_1.add(Flatten())
-# model.add(GlobalAveragePooling2D())
 model_1.add(Dense(num_classes, activation='softmax')) 
 
-# Compile the model
 model_1.compile(optimizer=Adam(lr=0.001), loss='categorical_crossentropy', metrics=['accuracy'])
 
 
